@@ -15,6 +15,7 @@ export type Network = {
   // Programs.
   registryProgramId: PublicKey;
   lockupProgramId: PublicKey;
+  multisigProgramId: PublicKey;
 
   // Staking instances.
   registrars: { [token: string]: PublicKey };
@@ -28,6 +29,7 @@ export const networks: Networks = {
     // Cluster.
     label: 'Mainnet Beta',
     url: 'https://solana-api.projectserum.com',
+    //url: 'https://api.mainnet-beta.solana.com',
     explorerClusterSuffix: '',
 
     srmFaucet: null,
@@ -37,6 +39,9 @@ export const networks: Networks = {
       'GrAkKfEpTKQuVHG2Y97Y2FF4i7y7Q5AHLK94JBy7Y5yv',
     ),
     lockupProgramId: new PublicKey(
+      '6ebQNeTPZ1j7k3TtkCCtEPRvG7GQsucQrZ7sSEDQi9Ks',
+    ),
+    multisigProgramId: new PublicKey(
       '6ebQNeTPZ1j7k3TtkCCtEPRvG7GQsucQrZ7sSEDQi9Ks',
     ),
     registrars: {
@@ -67,6 +72,9 @@ export const networks: Networks = {
     lockupProgramId: new PublicKey(
       'FXef1WbmM9WHzFMDcXvsgPWzgHQz7Hrz1CoqNUq5EEi9',
     ),
+    multisigProgramId: new PublicKey(
+      '6ebQNeTPZ1j7k3TtkCCtEPRvG7GQsucQrZ7sSEDQi9Ks',
+    ),
     registrars: {
       token1: new PublicKey('4QK3drbHCjouKbHUGP9PW8AYH6LuB5f4DQDq4ExCZD5u'),
       token2: new PublicKey('Gz6kVhoUc9mHF2bXkAQik7gXtDoWKvDkJ99fr1v2WTbi'),
@@ -87,19 +95,22 @@ export const networks: Networks = {
     srmFaucet: null,
     msrmFaucet: null,
 
+    multisigProgramId: new PublicKey(
+      '9z7Pq56To96qbVLzuBcf47Lc7u8uUWZh6k5rhcaTsDjz',
+    ),
     registryProgramId: new PublicKey(
-      'zyX2Mz2hErCRtY89c71xBhG97ecZBzGW7gXQcqK3kGm',
+      'A3ukM9swAsTqVC6g5Zy9FsWXofe5f2JhXMEfzenNf9Q7',
     ),
     lockupProgramId: new PublicKey(
-      'G1eYCEgXjdrQa9hHRtmw6HYpccTKrboVmf99LEpo8966',
+      '2z65xTKJDM4iJBVz5aXtNrWfQvKGgNJvnqY1GL2mkimu',
     ),
     registrars: {
-      token1: new PublicKey('BGKtgdD8nUN7nYcReaEmc21ov1LNaRh1RaBPo2bN4u2X'),
-      token2: new PublicKey('66YNDsBxejtN6UDodiCTMtjyyxyucMRTJnwb4zFjaRY8'),
+      token1: new PublicKey('Fwi5pie2VgWTDUSRNkca1HdFCke5r3v3mY83JbxtC3CJ'),
+      token2: new PublicKey('9kCGBWgHzGGChvmAsmu5jrXwEShZfLxKRTmKdxEpFUBr'),
     },
     mints: {
-      token1: new PublicKey('2NGvipoNMC8AFj2cqwt9GqsLvAg17nAdJjcZgYAzPoRA'),
-      token2: new PublicKey('dLiXdXEUiG8N4YzJaq3sbxrT16qhgc5TVFPn4XemQTj'),
+      token1: new PublicKey('2aE1pietadYMeDtdqKayS4SVo9W4xtC3U7SN4iGWCVcX'),
+      token2: new PublicKey('Cgan7PWyBH6Z7JNA6f9kDYgwBMZBxRexpdd29PJgnqah'),
     },
   },
 };
