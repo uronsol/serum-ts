@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useSnackbar } from 'notistack';
 import { encode as encodeBase64 } from 'js-base64';
@@ -48,7 +47,6 @@ import {
 } from '@solana/web3.js';
 import { useWallet } from '../common/WalletProvider';
 import { ViewTransactionOnExplorerButton } from '../common/Notification';
-import { State as StoreState } from '../../store/reducer';
 import * as loader from '../../utils/loader';
 
 export default function Multisig() {
@@ -462,7 +460,8 @@ function TxListItem({
 
 function ixLabel(tx: any) {
   if (tx.account.programId.equals(BPF_LOADER_UPGRADEABLE_PID)) {
-    if (true) {
+		// Upgrade instruction.
+    if (tx.account.data.equals(Buffer.from([3]))) {
       return (
         <ListItemText
           primary="Program upgrade"
@@ -512,7 +511,7 @@ function SignerDialog({
     PublicKey.findProgramAddress(
       [multisig.toBuffer()],
       multisigClient.programId,
-    ).then(addr => setSigner(addr.toString()));
+    ).then(addrNonce => setSigner(addrNonce[0].toString()));
   }, [multisig, multisigClient.programId, setSigner]);
   return (
     <Dialog open={open} fullWidth onClose={onClose} maxWidth="md">
